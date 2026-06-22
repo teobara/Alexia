@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alexia — Quiz Medicină Dentară</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #eef0f4;
+  --surface: #ffffff;
+  --surface2: #f3f4f7;
+  --border: #c5cad8;
+  --text: #111827;
+  --text-dim: #555b6e;
+  --accent: #6c5ce7;
+  --accent-hover: #7c6ff0;
+  --correct: #00b894;
+  --correct-bg: rgba(0,184,148,0.15);
+  --wrong: #d63031;
+  --wrong-bg: rgba(214,48,49,0.12);
+  --radius: 12px;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+
+/* Header */
+header {
+  text-align: center;
+  padding: 40px 0 30px;
+}
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #5b4cdb, #6c5ce7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 6px;
+}
+header p { color: var(--text-dim); font-size: 0.95rem; }
+
+/* Module grid */
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
+  gap: 16px;
+  margin-top: 30px;
+}
+.module-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.module-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(108,92,231,0.15);
+}
+.module-card h3 { font-size: 1.15rem; margin-bottom: 8px; }
+.module-card .meta { color: var(--text-dim); font-size: 0.85rem; }
+.module-card .progress-bar {
+  height: 4px;
+  background: var(--surface2);
+  border-radius: 2px;
+  margin-top: 14px;
+  overflow: hidden;
+}
+.module-card .progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #a29bfe);
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+
+/* Quiz view */
+#quiz-view { display: none; }
+
+.quiz-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.back-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.15s;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.back-btn:hover { border-color: var(--accent); }
+
+.score-display {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+.score-item { text-align: center; }
+.score-item .num { font-size: 1.3rem; font-weight: 700; }
+.score-item .label { font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; }
+.score-correct .num { color: var(--correct); }
+.score-wrong .num { color: var(--wrong); }
+.score-total .num { color: var(--accent); }
+
+.question-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 12px;
+}
+.nav-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.15s;
+}
+.nav-btn:hover:not(:disabled) { border-color: var(--accent); }
+.nav-btn:disabled { opacity: 0.3; cursor: default; }
+.question-counter { color: var(--text-dim); font-size: 0.9rem; }
+
+.question-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.question-card h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.options-list { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+
+.option-btn {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: left;
+  width: 100%;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.option-btn:hover:not(.answered) {
+  border-color: var(--accent);
+  background: rgba(108,92,231,0.08);
+}
+.option-letter {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+.option-text { padding-top: 4px; overflow-wrap: break-word; word-break: break-word; min-width: 0; }
+
+.option-btn.selected { border-color: var(--accent); background: rgba(108,92,231,0.12); }
+.option-btn.correct-answer {
+  border-color: var(--correct) !important;
+  background: var(--correct-bg) !important;
+}
+.option-btn.correct-answer .option-letter { background: var(--correct); color: #fff; }
+.option-btn.wrong-answer {
+  border-color: var(--wrong) !important;
+  background: var(--wrong-bg) !important;
+}
+.option-btn.wrong-answer .option-letter { background: var(--wrong); color: #fff; }
+.option-btn.answered.dimmed { opacity: 0.5; }
+.option-btn.answered { cursor: default; }
+.option-btn.answered.dimmed { opacity: 0.45; }
+
+.feedback {
+  margin-top: 16px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: none;
+}
+.feedback.correct { display: block; background: var(--correct-bg); color: var(--correct); }
+.feedback.wrong { display: block; background: var(--wrong-bg); color: var(--wrong); }
+
+/* Progress overview */
+.progress-overview {
+  margin-top: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.progress-overview h3 { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 12px; }
+.progress-dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  background: var(--surface2);
+  color: var(--text-dim);
+  border: 1px solid transparent;
+}
+.dot:hover { border-color: var(--accent); }
+.dot.current { border-color: var(--accent); color: var(--text); }
+.dot.answered-correct { background: var(--correct); color: #fff; }
+.dot.answered-wrong { background: var(--wrong); color: #fff; }
+
+/* Reset button */
+.reset-section { text-align: center; margin-top: 24px; }
+.reset-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  padding: 8px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.15s;
+}
+.reset-btn:hover { border-color: var(--wrong); color: var(--wrong); }
+
+/* Completion */
+.completion-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px;
+  text-align: center;
+  display: none;
+}
+.completion-card h2 { font-size: 1.5rem; margin-bottom: 12px; }
+.completion-card .score-big {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 20px 0;
+}
+.completion-card .score-big.great { color: var(--correct); }
+.completion-card .score-big.ok { color: #fdcb6e; }
+.completion-card .score-big.low { color: var(--wrong); }
+.retry-btn {
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 20px;
+  transition: background 0.15s;
+}
+.retry-btn:hover { background: var(--accent-hover); }
+
+@media (max-width: 600px) {
+  .container { padding: 12px; }
+  header { padding: 24px 0 20px; }
+  header h1 { font-size: 1.5rem; }
+  .modules-grid { gap: 12px; margin-top: 20px; }
+  .module-card { padding: 18px; }
+  .quiz-header { margin-bottom: 16px; }
+  .score-display { padding: 8px 12px; gap: 10px; }
+  .score-item .num { font-size: 1.1rem; }
+  .nav-btn { padding: 8px 14px; font-size: 0.85rem; }
+  .question-card { padding: 20px; }
+  .question-card h2 { font-size: 1rem; }
+  .option-btn { padding: 12px 14px; gap: 10px; font-size: 0.9rem; }
+  .option-letter { width: 28px; height: 28px; font-size: 0.8rem; }
+  .dot { width: 24px; height: 24px; font-size: 0.55rem; border-radius: 5px; }
+  .progress-dots { gap: 4px; }
+  .progress-overview { padding: 14px; }
+  .completion-card { padding: 28px 20px; }
+  .completion-card .score-big { font-size: 2.2rem; }
+}
+
+@media (max-width: 380px) {
+  .container { padding: 8px; }
+  header h1 { font-size: 1.3rem; }
+  .score-display { flex-wrap: wrap; justify-content: center; gap: 8px; padding: 8px 10px; }
+  .nav-btn { padding: 8px 10px; font-size: 0.8rem; }
+  .question-counter { font-size: 0.8rem; }
+  .option-btn { padding: 10px 12px; gap: 8px; font-size: 0.85rem; }
+  .option-letter { width: 26px; height: 26px; font-size: 0.75rem; border-radius: 6px; }
+  .dot { width: 20px; height: 20px; font-size: 0.5rem; border-radius: 4px; }
+  .progress-dots { gap: 3px; }
+  .completion-card .score-big { font-size: 1.8rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Home view -->
+  <div id="home-view">
+    <header>
+      <h1>Alexia</h1>
+      <p>Quiz — Medicină Dentară</p>
+    </header>
+    <div class="modules-grid" id="modules-grid"></div>
+  </div>
+
+  <!-- Quiz view -->
+  <div id="quiz-view">
+    <div class="quiz-header">
+      <button class="back-btn" onclick="showHome()">&#8592; Module</button>
+      <div class="score-display">
+        <div class="score-item score-correct">
+          <div class="num" id="score-correct">0</div>
+          <div class="label">Corecte</div>
+        </div>
+        <div class="score-item score-wrong">
+          <div class="num" id="score-wrong">0</div>
+          <div class="label">Greșite</div>
+        </div>
+        <div class="score-item score-total">
+          <div class="num" id="score-pct">0%</div>
+          <div class="label">Scor</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="question-nav">
+      <button class="nav-btn" id="prev-btn" onclick="navigate(-1)">&#8592; Anterior</button>
+      <span class="question-counter" id="question-counter"></span>
+      <button class="nav-btn" id="next-btn" onclick="navigate(1)">Următor &#8594;</button>
+    </div>
+
+    <div id="question-area">
+      <div class="question-card">
+        <h2 id="question-text"></h2>
+      </div>
+      <div class="options-list" id="options-list"></div>
+      <div class="feedback" id="feedback"></div>
+    </div>
+
+    <div class="completion-card" id="completion-card">
+      <h2>Felicitări!</h2>
+      <p>Ai terminat toate întrebările din acest modul.</p>
+      <div class="score-big" id="final-score"></div>
+      <p id="final-detail"></p>
+      <button class="retry-btn" onclick="resetModule()">Încearcă din nou</button>
+    </div>
+
+    <div class="progress-overview">
+      <h3>Progres</h3>
+      <div class="progress-dots" id="progress-dots"></div>
+    </div>
+
+    <div class="reset-section">
+      <button class="reset-btn" onclick="resetModule()">Resetează modulul</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const MODULES = {};
+let currentModule = null;
+let currentIndex = 0;
+let state = {};
+
+function loadState() {
+  try {
+    const saved = localStorage.getItem('alexia_state');
+    if (saved) state = JSON.parse(saved);
+  } catch(e) {}
+}
+
+function saveState() {
+  localStorage.setItem('alexia_state', JSON.stringify(state));
+}
+
+function getModuleState(moduleId) {
+  if (!state[moduleId]) {
+    state[moduleId] = { answers: {}, correct: 0, wrong: 0 };
+  }
+  return state[moduleId];
+}
+
+function shuffleOptions(question) {
+  const entries = Object.entries(question.options);
+  const correctText = question.options[question.correct];
+  const originalLetterOfCorrect = question.correct;
+
+  // Shuffle using Fisher-Yates
+  for (let i = entries.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [entries[i], entries[j]] = [entries[j], entries[i]];
+  }
+
+  const letters = ['A', 'B', 'C', 'D', 'E'].slice(0, entries.length);
+  let shuffled = {};
+  let newCorrect = null;
+
+  for (let i = 0; i < entries.length; i++) {
+    shuffled[letters[i]] = entries[i][1];
+    if (entries[i][1] === correctText) {
+      newCorrect = letters[i];
+    }
+  }
+
+  // Ensure the correct answer is NOT at the same letter as the original
+  if (newCorrect === originalLetterOfCorrect && entries.length > 1) {
+    // Swap the correct answer with the next position
+    const correctIdx = letters.indexOf(newCorrect);
+    const swapIdx = (correctIdx + 1) % entries.length;
+    const tempText = shuffled[letters[swapIdx]];
+    shuffled[letters[swapIdx]] = shuffled[letters[correctIdx]];
+    shuffled[letters[correctIdx]] = tempText;
+    newCorrect = letters[swapIdx];
+  }
+
+  return { options: shuffled, correct: newCorrect };
+}
+
+function registerModule(id, name, description, questions) {
+  MODULES[id] = { id, name, description, questions };
+}
+
+function renderModules() {
+  const grid = document.getElementById('modules-grid');
+  grid.innerHTML = '';
+
+  Object.values(MODULES).forEach(mod => {
+    const ms = getModuleState(mod.id);
+    const answered = Object.keys(ms.answers).length;
+    const total = mod.questions.length;
+    const pct = total > 0 ? Math.round((answered / total) * 100) : 0;
+
+    const card = document.createElement('div');
+    card.className = 'module-card';
+    card.onclick = () => startModule(mod.id);
+    card.innerHTML = `
+      <h3>${mod.name}</h3>
+      <div class="meta">${total} întrebări &bull; ${answered} răspunse &bull; ${ms.correct} corecte</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function showHome() {
+  document.getElementById('home-view').style.display = 'block';
+  document.getElementById('quiz-view').style.display = 'none';
+  currentModule = null;
+  renderModules();
+}
+
+function startModule(moduleId) {
+  currentModule = moduleId;
+  currentIndex = 0;
+  document.getElementById('home-view').style.display = 'none';
+  document.getElementById('quiz-view').style.display = 'block';
+
+  // Find first unanswered question
+  const ms = getModuleState(moduleId);
+  const questions = MODULES[moduleId].questions;
+  for (let i = 0; i < questions.length; i++) {
+    if (!ms.answers[questions[i].id]) {
+      currentIndex = i;
+      break;
+    }
+  }
+
+  renderQuestion();
+  renderProgress();
+  updateScore();
+}
+
+function renderQuestion() {
+  const mod = MODULES[currentModule];
+  const ms = getModuleState(currentModule);
+  const q = mod.questions[currentIndex];
+  const questionArea = document.getElementById('question-area');
+  const completionCard = document.getElementById('completion-card');
+
+  // Check if all answered
+  const allAnswered = mod.questions.every(q => ms.answers[q.id]);
+  if (allAnswered) {
+    questionArea.style.display = 'none';
+    completionCard.style.display = '';
+    const total = mod.questions.length;
+    const pct = Math.round((ms.correct / total) * 100);
+    const scoreEl = document.getElementById('final-score');
+    scoreEl.textContent = `${pct}%`;
+    scoreEl.className = 'score-big ' + (pct >= 80 ? 'great' : pct >= 50 ? 'ok' : 'low');
+    document.getElementById('final-detail').textContent =
+      `${ms.correct} corecte din ${total} întrebări`;
+    return;
+  }
+
+  questionArea.style.display = '';
+  completionCard.style.display = 'none';
+
+  document.getElementById('question-counter').textContent =
+    `${currentIndex + 1} / ${mod.questions.length}`;
+  document.getElementById('prev-btn').disabled = currentIndex === 0;
+  document.getElementById('next-btn').disabled = currentIndex === mod.questions.length - 1;
+
+  document.getElementById('question-text').textContent = q.question;
+
+  const existing = ms.answers[q.id];
+  const optList = document.getElementById('options-list');
+  optList.innerHTML = '';
+
+  // Shuffle or use stored shuffle
+  let shuffled;
+  if (existing) {
+    shuffled = existing.shuffled;
+  } else {
+    shuffled = shuffleOptions(q);
+    // Store the shuffle so re-visiting shows same order
+    if (!ms.shuffles) ms.shuffles = {};
+    ms.shuffles[q.id] = shuffled;
+    saveState();
+  }
+
+  // If not answered yet but we have a stored shuffle, use it
+  if (!existing && ms.shuffles && ms.shuffles[q.id]) {
+    shuffled = ms.shuffles[q.id];
+  }
+
+  const letters = Object.keys(shuffled.options).sort();
+  letters.forEach(letter => {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn';
+
+    if (existing) {
+      btn.classList.add('answered');
+      if (letter === shuffled.correct) {
+        btn.classList.add('correct-answer');
+      } else if (letter === existing.chosen && letter !== shuffled.correct) {
+        btn.classList.add('wrong-answer');
+      } else {
+        btn.classList.add('dimmed');
+      }
+    }
+
+    btn.innerHTML = `
+      <span class="option-letter">${letter}</span>
+      <span class="option-text">${shuffled.options[letter]}</span>
+    `;
+
+    if (!existing) {
+      btn.onclick = () => answerQuestion(q, shuffled, letter);
+    }
+
+    optList.appendChild(btn);
+  });
+
+  const feedback = document.getElementById('feedback');
+  feedback.className = 'feedback';
+  if (existing) {
+    if (existing.isCorrect) {
+      feedback.className = 'feedback correct';
+      feedback.textContent = '✓ Răspuns corect!';
+    } else {
+      feedback.className = 'feedback wrong';
+      feedback.textContent = `✗ Răspuns greșit. Răspunsul corect era: ${shuffled.correct}`;
+    }
+  }
+}
+
+function answerQuestion(q, shuffled, chosenLetter) {
+  const ms = getModuleState(currentModule);
+  const isCorrect = chosenLetter === shuffled.correct;
+
+  if (isCorrect) ms.correct++;
+  else ms.wrong++;
+
+  ms.answers[q.id] = { chosen: chosenLetter, isCorrect, shuffled };
+  saveState();
+
+  renderQuestion();
+  renderProgress();
+  updateScore();
+
+  // Auto-advance after a short delay if answered
+  if (!isCorrect) return;
+  setTimeout(() => {
+    const mod = MODULES[currentModule];
+    if (currentIndex < mod.questions.length - 1) {
+      currentIndex++;
+      renderQuestion();
+      renderProgress();
+    }
+  }, 800);
+}
+
+function navigate(dir) {
+  const mod = MODULES[currentModule];
+  const newIdx = currentIndex + dir;
+  if (newIdx >= 0 && newIdx < mod.questions.length) {
+    currentIndex = newIdx;
+    renderQuestion();
+    renderProgress();
+  }
+}
+
+function updateScore() {
+  const ms = getModuleState(currentModule);
+  document.getElementById('score-correct').textContent = ms.correct;
+  document.getElementById('score-wrong').textContent = ms.wrong;
+  const total = ms.correct + ms.wrong;
+  const pct = total > 0 ? Math.round((ms.correct / total) * 100) : 0;
+  document.getElementById('score-pct').textContent = `${pct}%`;
+}
+
+function renderProgress() {
+  const mod = MODULES[currentModule];
+  const ms = getModuleState(currentModule);
+  const dotsEl = document.getElementById('progress-dots');
+  dotsEl.innerHTML = '';
+
+  mod.questions.forEach((q, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'dot';
+    if (i === currentIndex) dot.classList.add('current');
+
+    const ans = ms.answers[q.id];
+    if (ans) {
+      dot.classList.add(ans.isCorrect ? 'answered-correct' : 'answered-wrong');
+    }
+
+    dot.textContent = i + 1;
+    dot.onclick = () => { currentIndex = i; renderQuestion(); renderProgress(); };
+    dotsEl.appendChild(dot);
+  });
+}
+
+function resetModule() {
+  if (!currentModule) return;
+  if (!confirm('Sigur vrei să resetezi progresul pentru acest modul?')) return;
+  state[currentModule] = { answers: {}, correct: 0, wrong: 0 };
+  saveState();
+  currentIndex = 0;
+  renderQuestion();
+  renderProgress();
+  updateScore();
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  if (!currentModule) return;
+  if (e.key === 'ArrowLeft') navigate(-1);
+  if (e.key === 'ArrowRight') navigate(1);
+
+  const ms = getModuleState(currentModule);
+  const mod = MODULES[currentModule];
+  const q = mod.questions[currentIndex];
+  if (ms.answers[q.id]) return;
+
+  const keyMap = { '1': 0, '2': 1, '3': 2, '4': 3, '5': 4, 'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e': 4 };
+  const idx = keyMap[e.key.toLowerCase()];
+  if (idx !== undefined) {
+    const btns = document.querySelectorAll('.option-btn:not(.answered)');
+    if (btns[idx]) btns[idx].click();
+  }
+});
+
+// Init
+loadState();
+</script>
+
+<!-- Module data will be loaded from separate JS files -->
+<script src="modules/cap1.js?v=4"></script>
+<script src="modules/cap2.js?v=4"></script>
+<script src="modules/cap3.js?v=4"></script>
+<script src="modules/cap4.js?v=4"></script>
+<script src="modules/cap5.js?v=4"></script>
+<script src="modules/cap6.js?v=4"></script>
+<script src="modules/cap7.js?v=4"></script>
+<script src="modules/combinat.js?v=4"></script>
+
+<script>
+// After all modules are loaded, render home
+renderModules();
+</script>
+
+</body>
+</html>
