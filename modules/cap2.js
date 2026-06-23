@@ -88,7 +88,7 @@ registerModule("cap2", "Capitol 2 — Endodonție", "Întrebări din capitolul d
     "question": "Testul anesteziei se face in cazul in care:",
     "options": {
       "A": "pACIENTUL POATE IDENTIFICA DINTELE CAUZAL",
-      "B": "lA EXAMENUL CLINIC SE IDENTIFICA CU USURINTA DINTELE CAUZAL",
+      "B": "lA EXAMENUL CLINIC SE IDENTIFICA CU USURINTA DINTELE",
       "C": "pACIENTUL NU PREZINTA DURERI IRADIATE HEMIFACIALE",
       "D": "sunt prezente dureri riadiate hemifaciale",
       "E": "durerea este localizata patologia pulpara si periapicala"
@@ -1144,8 +1144,8 @@ registerModule("cap2", "Capitol 2 — Endodonție", "Întrebări din capitolul d
       "A": "Varful instrumentelor este semiactiv avand forma ogivala, conica rotunjita",
       "B": "Forma sectiunii transversale este dreptunghiulara",
       "C": "Prezinta risc crescut de blocare in canal",
-      "D": "Rezistenta la oboseala ciclica este cu 50% inferioara instrumentelor Wave One",
-      "E": "Instrumentele componente ale sistemului sunt in nr de 2 DEZINFECTIA CANALELOR RADICULARE"
+      "D": "EZINFECTIA CANALELOR RADICULARE",
+      "E": "Instrumentele componente ale sistemului sunt in nr de 2"
     },
     "correct": "A"
   },

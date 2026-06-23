@@ -864,12 +864,12 @@ registerModule("cap5", "Capitol 5 — Pedodonție", "Întrebări din capitolul d
   },
   {
     "id": 73,
-    "question": "Examenul obiectiv al cariei necavitare a smalțului suprafețelor netede la DPI,evidentiazǎ urmǎtoarele, cu exceptia:",
+    "question": "Examenul obiectiv al cariei necavitare a smalțului suprafețelor netede la",
     "options": {
+      "D": "Palparea blândǎ cu sonda rotunjitǎ relevǎ smaltul rugos sau lucios; -",
       "A": "Modificare de culoare a smaltului (pată albă cretoasă) localizatǎ cel mai frecvent lanivelul coletului",
       "B": "Percutia în ax negativǎ",
       "C": "Prin inspectie, transiluminarea simplǎ sau cu fibrǎ opticǎ poate evidentia cariaincipientǎ",
-      "D": "Palparea blândǎ cu sonda rotunjitǎ relevǎ smaltul rugos sau lucios; -",
       "E": "Rx bitewing evidentiazǎ cariile incipiente proximale care depǎşesc 1/2 din grosimeasmaltului"
     },
     "correct": "E"
@@ -1032,12 +1032,12 @@ registerModule("cap5", "Capitol 5 — Pedodonție", "Întrebări din capitolul d
   },
   {
     "id": 87,
-    "question": "Alegeți afirmația falsǎ despre tratamentul medicamentos al plăgii dentinare la DPI:",
+    "question": "Alegeți afirmația falsǎ despre tratamentul medicamentos al plăgii dentinare la",
     "options": {
-      "A": "Cavitǎti superficiale: toaleta cavitǎtii cu alcool + H2O2,liner CISfotopolimerizabil/Ca(OH)2 sau bonding",
-      "B": "Printre obiectivele tratamentului se regǎseste si neodentinogeneza",
-      "C": "Cavitǎti profunde:toaleta cavitǎtii cu alcool+H2O2,coafaj indirect/natural/direct cuCa(OH)2/MTA +obturație de bazǎ CIS/FOZ",
       "D": "Etapele tratamentului sunt toaleta cavitǎtii si aplicarea unor materiale care sǎîndeplineascǎ obiectivele acestuia",
+      "A": "Cavitǎti superficiale: toaleta cavitǎtii cu alcool + H2O2,liner",
+      "C": "Cavitǎti profunde:toaleta cavitǎtii cu alcool+H2O2,coafaj indirect/natural/direct cuCa(OH)2/MTA +obturație de bazǎ CIS/FOZ",
+      "B": "Printre obiectivele tratamentului se regǎseste si neodentinogeneza",
       "E": "Cavitǎți medii: toaleta cavitǎții cu H2O2, obturație de bazǎ din CIS/FOZ"
     },
     "correct": "C"
@@ -1116,7 +1116,7 @@ registerModule("cap5", "Capitol 5 — Pedodonție", "Întrebări din capitolul d
   },
   {
     "id": 94,
-    "question": "Alegeti afirmația falsă despre examenul subiectiv în pulpita purulentǎ partialǎ aDPI:",
+    "question": "Alegeti afirmația falsă despre examenul subiectiv în pulpita purulentǎ partialǎ",
     "options": {
       "A": "Durere spontanǎ, mai ales noaptea",
       "B": "Durerea are caracter pulsatil, sincron cu pulsul",
@@ -1176,12 +1176,12 @@ registerModule("cap5", "Capitol 5 — Pedodonție", "Întrebări din capitolul d
   },
   {
     "id": 99,
-    "question": "Gangrena complicată cu parodontită apicală acutǎ în stadiul endoosos a DPI,prezintă urmǎtoarele simptome, cu exceptia:",
+    "question": "Gangrena complicată cu parodontită apicală acutǎ în stadiul endoosos a",
     "options": {
+      "D": "Pulpǎ mortificatǎ,gri,consistentǎ moale, fetidǎ,fǎrǎ sensibilitate şi sângerare lapalpare",
       "A": "Durere localizatǎ",
       "B": "Durere de intensitate mare, spontanǎ,exacerbatǎ la masticatie",
       "C": "Mobilitate crescutǎ",
-      "D": "Pulpǎ mortificatǎ,gri,consistentǎ moale, fetidǎ,fǎrǎ sensibilitate şi sângerare lapalpare",
       "E": "Senzatie de egresiune a dintelui"
     },
     "correct": "A"
@@ -1203,9 +1203,9 @@ registerModule("cap5", "Capitol 5 — Pedodonție", "Întrebări din capitolul d
     "question": "Apexificarea reprezintǎ:",
     "options": {
       "A": "Este o procedurǎ terapeuticǎ prin care se creeazǎ o barierǎ apicalǎ din diferite tesuturiîn lipsa cresterii rǎdǎcinii, pe baza pulpei vii sǎnǎtoase restante si stimulate terapeutic",
-      "B": "Este procesul fiziologic de creștere a rădăcinii și de închidere a apexului la DPIsǎnǎtosi",
-      "C": "Este procesul fiziologic de crestere a rǎdǎcinii si de închidere a apexului la DPI cucomplicatii pulpare pe baza pulpei vii sǎnǎtoase restante si stimulate terapeutic",
+      "B": "Este procesul fiziologic de creștere a rădăcinii și de închidere a apexului la",
       "D": "Este o procedură terapeutică prin care se creează o barierǎ apicalǎ din diferite țesuturiîn lipsa cresterii rǎdăcinii, pe baza tesutului periapical tânăr la DPI cu necrozǎ, gangrenǎpulparǎ totalǎ simplǎ sau complicatǎ",
+      "C": "Este procesul fiziologic de crestere a rǎdǎcinii si de închidere a apexului la DPI cucomplicatii pulpare pe baza pulpei vii sǎnǎtoase restante si stimulate terapeutic",
       "E": "Este o procedurǎ terapeuticǎ prin care se creeazǎ o barierǎ apicalǎ din diferite tesuturiîn lipsa creșterii rădăcinii, pe baza țesutului periapical tânăr la DPI sǎnǎtosi"
     },
     "correct": "D"
@@ -1815,9 +1815,9 @@ registerModule("cap5", "Capitol 5 — Pedodonție", "Întrebări din capitolul d
     "options": {
       "A": "Este o tehnicǎ controversatǎ,asociatǎ sau nu cu constrângerea fizicǎ a copilului; -",
       "B": "Medicul poate reurge la aceastǎ metodǎ întro situatie de urgentǎ, fǎrǎ acordulpǎrintelui",
-      "C": "Nu se utilizeaza decat in cazul copiilor foarte dificili,la care alte tehnici demanagement comportamental au esuat",
+      "C": "APITOLUL 6 - ORTODONTIE SI ORTOPEDIE DENTOMAXILARĂ 1.ANOMALIILE DENTARE 1.1.DINTII SUPRANUMERARI",
       "D": "Tipetele copilului pot fi oprite prin aplicarea fermǎ dar blândă, a mâinii peste gurǎ:",
-      "E": "Tehnica nu se recomanda copiilor foarte mici si celor cu deficit psihomental. CAPITOLUL 6 - ORTODONTIE SI ORTOPEDIE DENTOMAXILARĂ 1.ANOMALIILE DENTARE 1.1.DINTII SUPRANUMERARI"
+      "E": "Tehnica nu se recomanda copiilor foarte mici si celor cu deficit psihomental"
     },
     "correct": "B"
   },

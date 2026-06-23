@@ -786,9 +786,10 @@ registerModule("cap4", "Capitol 4 — Parodontologie", "Întrebări din capitolu
       "A": "Sângerarea dentarǎ",
       "B": "Prezenta unui abces parodontal",
       "C": "Durere dentarǎ",
-      "D": "Ganglionii; EToate rǎspunsurile sunt incorecte"
+      "D": "Ganglionii",
+      "E": "Toate rǎspunsurile sunt incorecte"
     },
-    "correct": "A"
+    "correct": "E"
   },
   {
     "id": 67,
@@ -1803,9 +1804,9 @@ registerModule("cap4", "Capitol 4 — Parodontologie", "Întrebări din capitolu
     "options": {
       "A": "Stimuleazǎ proliferarea celulelor ligamentare parodontale",
       "B": "Scad productia de citokine",
-      "C": "Cresc nivelul fosfatazei alcaline",
+      "C": "APITOLUL 5 PEDODONTIE 1.ERUPTIA DENTARA",
       "D": "Stimuleazǎ angiogeneza",
-      "E": "Suprimǎ migrarea celulelor epiteliale. CAPITOLUL 5 PEDODONTIE 1.ERUPTIA DENTARA"
+      "E": "Suprimǎ migrarea celulelor epiteliale"
     },
     "correct": "C"
   }

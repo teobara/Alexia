@@ -171,12 +171,13 @@ registerModule("cap3", "Capitol 3 — Protetică Dentară", "Întrebări din cap
     "id": 15,
     "question": "Panta tuberculului articular prezinta urmatoarele caracteristici, cu exceptia:",
     "options": {
-      "B": "Are o inclinatie de 555 grade",
-      "C": "Are o inclinatie medie de 33 grade",
-      "D": "O lungime medie de 9mm",
-      "E": "Pe aceasta suprafata are loc alunecarea anterioara a condilului mandibulei la"
+      "A": "Are o inclinatie de 555 grade",
+      "B": "Are o inclinatie medie de 33 grade",
+      "C": "O lungime medie de 9mm",
+      "D": "Pe aceasta suprafata are loc alunecarea anterioara a condilului mandibulei la deschiderea gurii si in  miscarile de propulsie",
+      "E": "Are o dimensiune transversala de 820mm"
     },
-    "correct": "B"
+    "correct": "E"
   },
   {
     "id": 16,
@@ -1862,8 +1863,8 @@ registerModule("cap3", "Capitol 3 — Protetică Dentară", "Întrebări din cap
     "id": 156,
     "question": "Alegeti afirmatia gresitǎ despre protezarea de urgentǎ în edentatia partialǎîntinsǎ:",
     "options": {
-      "A": "Poate rezolva situații limitǎ, când considerente personale ale pacientului,de - maximǎurgentǎfizionomie,fonatie, o impun",
-      "B": "Principalul scop este de a conserva integritatea morfologicǎ si functionalǎ a ADM",
+      "A": "DM",
+      "B": "Principalul scop este de a conserva integritatea morfologicǎ si functionalǎ a",
       "C": "Oferǎ posibilitatea dirijării cicatrizării, întrucât proteza va acționa ca un conformator",
       "D": "Amânǎ din considerente biologice protezarea definitivǎ",
       "E": "Menajeazǎ psihic bolnavul"
@@ -2198,11 +2199,11 @@ registerModule("cap3", "Capitol 3 — Protetică Dentară", "Întrebări din cap
     "id": 184,
     "question": "Afirmațiile despre verificarea extraorală a proteei sunt adevǎrate, cu exceptia:",
     "options": {
-      "A": "Se apreciazǎ corectitudinea executiei tehnice a bazei, arcadelor artificiale, EMSS,prelucrarea,lustruirea si modelajul fetelor externe",
+      "A": "Se apreciazǎ corectitudinea executiei tehnice a bazei, arcadelor artificiale",
+      "E": "Se verificǎ dacǎ proteza prezintǎ deteriorǎri, porozitǎti, surplusuri",
       "B": "Se efectueazǎ în fata pacientului",
       "C": "Se examineazǎ atât fata externǎ cât si cea mucozalǎ; -",
-      "D": "Se verificǎ EMSS, dacǎ nu sau deteriorat în momentul stupuirii acrilatului",
-      "E": "Se verificǎ dacǎ proteza prezintǎ deteriorǎri, porozitǎti, surplusuri"
+      "D": "Se verificǎ EMSS, dacǎ nu sau deteriorat în momentul stupuirii acrilatului"
     },
     "correct": "B"
   },

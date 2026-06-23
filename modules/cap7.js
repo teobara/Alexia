@@ -219,10 +219,10 @@ registerModule("cap7", "Capitol 7 — Chirurgie OMF", "Întrebări din capitolul
     "id": 19,
     "question": "În cazul reactiilor adverse sau de supradozaj cu articaină putem acționa astfel:",
     "options": {
-      "A": "In caz de hipotensiune, tahicardie sau bradicardie,pacientul va fi pozitionat inclinostatism; -",
+      "A": "TI",
       "B": "Tratamentul convulsiilor generalizate consta in injectarea i.m. de diazepam 10 20 mg",
       "C": "În cazul în care colapsul pare iminent trebuie sǎ fie imediat administrata adrenalinaim",
-      "D": "Administrarea i.v. a adrenalinei se poate efectua doar de catre medicii specialisti ATI",
+      "D": "Administrarea i.v. a adrenalinei se poate efectua doar de catre medicii specialisti",
       "E": "Toate raspunsurile sunt corecte"
     },
     "correct": "E"
@@ -1623,11 +1623,11 @@ registerModule("cap7", "Capitol 7 — Chirurgie OMF", "Întrebări din capitolul
     "id": 136,
     "question": "Lamboul gingival în plic (pentru abordul palatinal) prezintă ca și avantajeurmǎtoarele,cu exceptia:",
     "options": {
-      "A": "Concomitent se poate realiza si gingivectomia",
+      "A": "L PARTILOR MOI",
       "B": "Decolarea lamboului este facilǎ",
       "C": "Insertia gingivalǎ poate fi modificatǎ dupǎ necesitǎti",
       "D": "Existǎ puncte de referintǎ pentru repozitionarea lamboului",
-      "E": "Repozitionarea lamboului nu ridicǎ probleme. 13. TRATAMENTUL CHIRURGICAL PREPROTETIC AL PARTILOR MOI"
+      "E": "Repozitionarea lamboului nu ridicǎ probleme. 13. TRATAMENTUL CHIRURGICAL PREPROTETIC"
     },
     "correct": "B"
   },
@@ -2284,9 +2284,9 @@ registerModule("cap7", "Capitol 7 — Chirurgie OMF", "Întrebări din capitolul
     "options": {
       "A": "Înfundarea reliefului osos al arcadei temporozigomatice, cu perceperea uneidiscontinuitǎti osoase ,,în treaptǎ,,,in sant sau ,,în V; -",
       "B": "Discretǎ echimozǎ in dreptul arcadei temporozigomatice",
-      "C": "Exoftalmie sau enoftalmie",
+      "C": "HISTURI SI TUMORI BENIGNE ALE PARTILOR MOI - ORALE SI CERVICOFACIALE",
       "D": "Limitarea miscǎrilor mandibulare; -",
-      "E": "Discretǎ escoriatie în dreptul arcadei temporozigomatice. CHISTURI SI TUMORI BENIGNE ALE PARTILOR MOI - ORALE SI CERVICOFACIALE"
+      "E": "Discretǎ escoriatie în dreptul arcadei temporozigomatice"
     },
     "correct": "C"
   },
@@ -2440,9 +2440,9 @@ registerModule("cap7", "Capitol 7 — Chirurgie OMF", "Întrebări din capitolul
     "options": {
       "A": "Carcinom spinocelular",
       "B": "Carcinom verucos",
-      "C": "Fibromul mucoasei orale",
+      "C": "HISTURI,TUMORI BENIGNE SI OSTEOPATII ALE OASELOR MAXILARE",
       "D": "Botriomicomul",
-      "E": "Mucocel. CHISTURI,TUMORI BENIGNE SI OSTEOPATII ALE OASELOR MAXILARE"
+      "E": "Mucocel"
     },
     "correct": "E"
   },
@@ -2981,8 +2981,8 @@ registerModule("cap7", "Capitol 7 — Chirurgie OMF", "Întrebări din capitolul
       "A": "Tumora Warthin este o tumorǎ malignǎ; -",
       "B": "Apare mai ales în intervalul de vârstă 5060 ani; -",
       "C": "Poate afecta bilateral parotidele în 2025% din cazuri",
-      "D": "Tumora nu este bine delimitatǎ macroscopic",
-      "E": "Dupǎ extirpare,tumora Warthin are o ratǎ mare de recidivǎ. -- DESPICATURILE LABIOMAXILOPALATINE"
+      "D": "ESPICATURILE LABIOMAXILOPALATINE",
+      "E": "Dupǎ extirpare,tumora Warthin are o ratǎ mare de recidivǎ. --"
     },
     "correct": "B"
   },
@@ -3108,12 +3108,12 @@ registerModule("cap7", "Capitol 7 — Chirurgie OMF", "Întrebări din capitolul
   },
   {
     "id": 260,
-    "question": "Alegeți afirmația greşitǎ dintre etapele de tratament multidisciplinar in DLMP:",
+    "question": "Alegeți afirmația greşitǎ dintre etapele de tratament multidisciplinar in",
     "options": {
+      "D": "Dupǎ 34 ani: Logopedie,psihologopedie",
       "A": "Primele 2 sǎptǎmâni: Consultatia primarǎ, consiliere si monitorizare respiratie sialimentație, plǎcutǎ conformator palatinalǎ/+ nazalǎ (NAM); -",
       "B": "Dupǎ 56 luni: Examinarea functiei auditive",
       "C": "Dupǎ 2 ani: Supravegherea eruptiei dentare; -",
-      "D": "Dupǎ 34 ani: Logopedie,psihologopedie",
       "E": "Termen lung/termen permanent: Operații ortognatice"
     },
     "correct": "E"

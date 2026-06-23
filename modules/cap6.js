@@ -2321,9 +2321,9 @@ registerModule("cap6", "Capitol 6 — Ortodonție", "Întrebări din capitolul d
     "options": {
       "A": "Tipar de crestere convergent",
       "B": "Crestere condilianǎ simetricǎ",
-      "C": "Pacienti de vârstǎ adultǎ, când cresterea este deja încheiatǎ",
+      "C": "HIRURGIE OROMAXILOFACIALA 1.SUBSTANTE ANESTEZICE UTILIZATE ÎN STOMATOLOGIE",
       "D": "Discrepantǎ scheleticǎ minimǎ",
-      "E": "Prognatism mandibular functional. CAPITOLUL 7 -- CHIRURGIE OROMAXILOFACIALA 1.SUBSTANTE ANESTEZICE UTILIZATE ÎN STOMATOLOGIE"
+      "E": "Prognatism mandibular functional"
     },
     "correct": "C"
   }

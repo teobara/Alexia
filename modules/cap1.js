@@ -521,8 +521,9 @@ registerModule("cap1", "Capitol 1 — Odontoterapie", "Întrebări din capitolul
     "options": {
       "A": "Compozitia salivei variaza in functi de natura alimentelor consumate",
       "B": "Rata secretiei salivare este mai mare la femei",
-      "D": "Ritmul secretiei salivare de repaus este de 0,20,3 ml/min",
-      "E": "Saliva asigura protectia mucoasei bucale"
+      "C": "Ritmul secretiei salivare de repaus este de 0,20,3 ml/min",
+      "D": "Saliva asigura protectia mucoasei bucale",
+      "E": "In secretia salivara de repaus o cantitate sub 0,1ml/min este considerata hiposialie"
     },
     "correct": "B"
   },
@@ -543,32 +544,36 @@ registerModule("cap1", "Capitol 1 — Odontoterapie", "Întrebări din capitolul
     "question": "Timpul de clearance:",
     "options": {
       "A": "Este direct proportional cu secretia salivara",
-      "B": "Trebuie sa fie cat mai lung pentru substantele care favorizeaza aparitia procesului",
-      "C": "carios",
-      "D": "Prezinta variatii topografice din cauza stagnarii salivei in anumite zone",
-      "E": "Trebuie sa fie scurt pentru substantele care asigura carioportectia"
+      "B": "Trebuie sa fie cat mai lung pentru substantele care favorizeaza aparitia procesului carios",
+      "C": "Prezinta variatii topografice din cauza stagnarii salivei in anumite zone",
+      "D": "Trebuie sa fie scurt pentru substantele care asigura carioportectia",
+      "E": "Se pastreaza constant si atunci cand glandele salivare nu functioneaza normal"
     },
-    "correct": "D"
+    "correct": "C"
   },
   {
     "id": 47,
     "question": "Rata secretiei salivare",
     "options": {
       "A": "Secretia salivara stimulata peste 0,7 ml/min este considerata hiposialie",
-      "C": "La copii de 810 ani este mai mica decat la adult",
-      "E": "Secretia salivara de repaus este de 13 ml/min"
+      "B": "La copii de 810 ani este mai mica decat la adult",
+      "C": "Secretia salivara de repaus este de 13 ml/min",
+      "D": "Cea de repaus este mai mica la barbati",
+      "E": "Secretia salivara de repaus sub 0,1 ml/min este considerata hiposialie"
     },
-    "correct": "A"
+    "correct": "E"
   },
   {
     "id": 48,
     "question": "Ritmul secretiie salivare stimulate:",
     "options": {
-      "B": "Este de 0,20,3 ml/min",
-      "C": "O cantiate de sub 0,1 ml/min este considerata hipersialie",
-      "E": "Este de 13ml/min"
+      "A": "Este de 0,20,3 ml/min",
+      "B": "O cantiate de sub 0,1 ml/min este considerata hipersialie",
+      "C": "Este de 13ml/min",
+      "D": "Este mai mare la femei",
+      "E": "O secretie salivara peste 1ml/min este considerata hiposialie"
     },
-    "correct": "E"
+    "correct": "C"
   },
   {
     "id": 49,
@@ -576,9 +581,8 @@ registerModule("cap1", "Capitol 1 — Odontoterapie", "Întrebări din capitolul
     "options": {
       "A": "Sistemul cel mai eficient este cel al glicoproteinelor",
       "B": "Sistemul bicarbonatilor actioneaza la un pH de 4,5",
-      "C": "Sistemul tampon al proteinelor si glicoproteinelor devine important acolo unde",
-      "D": "celelalte 2 sisteme nu mai sunt active",
-      "E": "Sistemul tampon al fosfatilor are capacitate maxima la un pH de 4.5"
+      "C": "Sistemul tampon al proteinelor si glicoproteinelor devine important acolo unde celelalte 2 sisteme nu mai sunt active",
+      "D": "Sistemul tampon al fosfatilor are capacitate maxima la un pH de 4.5"
     },
     "correct": "C"
   },
@@ -589,9 +593,10 @@ registerModule("cap1", "Capitol 1 — Odontoterapie", "Întrebări din capitolul
       "A": "La sfarsitul sarcinii se constata o crestere a bicarbonatilor",
       "B": "O secretie salaivara puternica creste aciditatea orala",
       "C": "Capacitatea tampon este mai mica cand saliva este stimulata",
-      "E": "Noaptea secretia salivara este mai mica si pHul mai acid"
+      "D": "Noaptea secretia salivara este mai mica si pHul mai acid",
+      "E": "Ziua pHul este mai acid"
     },
-    "correct": "E"
+    "correct": "D"
   },
   {
     "id": 51,
@@ -599,8 +604,9 @@ registerModule("cap1", "Capitol 1 — Odontoterapie", "Întrebări din capitolul
     "options": {
       "A": "Sistemele tampon al fosfatilor este cel mai eficient sistem tampon",
       "B": "Sistemul tampon al proteinelor si glicoproteinelor este cel mai slab sistem tampon",
-      "D": "Sistemul tampon al fosfatilor are capacitatea minima la ph 6,87,2",
-      "E": "Sistemul tampon al bicarbonatilor actioneaza la un pH de 4,5"
+      "C": "Sistemul tampon al fosfatilor are capacitatea minima la ph 6,87,2",
+      "D": "Sistemul tampon al bicarbonatilor actioneaza la un pH de 4,5",
+      "E": "Principalul sistem tampon in saliva de repaus este sistemul tampon al bicarbonatilor"
     },
     "correct": "B"
   },
@@ -611,7 +617,8 @@ registerModule("cap1", "Capitol 1 — Odontoterapie", "Întrebări din capitolul
       "A": "Medicamentele contraceptive determina scaderea capacitatii tampon",
       "B": "Reologia bucala",
       "C": "Graviditatea",
-      "E": "Valoarea initiala a pHului bucal"
+      "D": "Valoarea initiala a pHului bucal",
+      "E": "Ritmul secretiei salivare"
     },
     "correct": "A"
   },
@@ -622,7 +629,8 @@ registerModule("cap1", "Capitol 1 — Odontoterapie", "Întrebări din capitolul
       "A": "Retine resturile de alimente si alte particule care vor favoriza dezvoltatea microorg",
       "B": "Are rol de lubrifiere a mucoasei bucale",
       "C": "Ajuta la formarea bolului alimentar",
-      "D": "Are rol in fonatie"
+      "D": "Are rol in fonatie",
+      "E": "Regleaza pHul prin sistemele tampon"
     },
     "correct": "A"
   },
@@ -633,8 +641,8 @@ registerModule("cap1", "Capitol 1 — Odontoterapie", "Întrebări din capitolul
       "A": "Cresterea timpului de clearance",
       "B": "Favorizarea colonizarii smaltului cu microorg cariogene",
       "C": "Ajuta adeziunea microbiana",
-      "D": "Remineralizarea proceselor carioase incipeinte necavitare prin formarea fosfatilor",
-      "E": "de calciu"
+      "D": "Remineralizarea proceselor carioase incipeinte necavitare prin formarea fosfatilor de calciu",
+      "E": "Cresterea aciditatii bucale"
     },
     "correct": "D"
   },
@@ -643,10 +651,10 @@ registerModule("cap1", "Capitol 1 — Odontoterapie", "Întrebări din capitolul
     "question": "Rolul alimentatiei in aparitia cariei dentare",
     "options": {
       "A": "Caria este considerata boala de nutritie",
-      "B": "Glucidele, lipidele si proteinele joaca rol esential in cariopreventie sau",
-      "C": "cariosusceptibilitate",
-      "D": "Trecerea de la o dieta saraca in hidrati de carbon la una cu continut crescut de",
-      "E": "hidrati de carbon duce la scaderea riscului de carie"
+      "B": "Glucidele, lipidele si proteinele joaca rol esential in cariopreventie sau cariosusceptibilitate",
+      "C": "Trecerea de la o dieta saraca in hidrati de carbon la una cu continut crescut de hidrati de carbon duce la scaderea riscului de carie",
+      "D": "Alimentatia reprezinta primul factor determinant in geneza cariei",
+      "E": "Un consum scazut de glucide intre mese determina cresterea incidentei la carie"
     },
     "correct": "B"
   },
@@ -657,10 +665,10 @@ registerModule("cap1", "Capitol 1 — Odontoterapie", "Întrebări din capitolul
       "A": "Este un depozit dur ce adera la suprafetele dentare",
       "B": "Poate fi indepartat prin spalare cu spray de apa",
       "C": "Este localizat doar subgingival",
-      "D": "Situat subgingival se depune in santul gingival si in pungile parodontale si se poate",
-      "E": "observa direct cu ochiul liber"
+      "D": "Situat subgingival se depune in santul gingival si in pungile parodontale si se poate observa direct cu ochiul liber",
+      "E": "Formarea acestuia depinde de aranjamentul dintilor pe arcada"
     },
-    "correct": "A"
+    "correct": "E"
   },
   {
     "id": 57,
@@ -690,11 +698,11 @@ registerModule("cap1", "Capitol 1 — Odontoterapie", "Întrebări din capitolul
     "id": 59,
     "question": "Biofilmul bacterian:",
     "options": {
-      "A": "Situat subgingival se depune in santul gingival si nu poate fi observat cu ochiul",
-      "B": "liber",
-      "C": "Este un depozit dur",
-      "D": "Situat supragingival poate fi observat cu usurinta si cand stratul depus este subtire",
-      "E": "Nu adera la restaurarile coronare"
+      "A": "Situat subgingival se depune in santul gingival si nu poate fi observat cu ochiul liber",
+      "B": "Este un depozit dur",
+      "C": "Situat supragingival poate fi observat cu usurinta si cand stratul depus este subtire",
+      "D": "Nu adera la restaurarile coronare",
+      "E": "Poate fi indepartat prin spalare cu spray de apa"
     },
     "correct": "A"
   },
@@ -717,19 +725,20 @@ registerModule("cap1", "Capitol 1 — Odontoterapie", "Întrebări din capitolul
       "A": "Colonizarea primara este dependenta de prezenta zaharozei",
       "B": "Formarea initiala dureaza aproximativ 2 min",
       "C": "In decurs de 21 de zile coloniiile microbiene devin stabile",
-      "E": "Flora bacteriana specifica reprezinta 78% din constituentii biofilmului"
+      "D": "Flora bacteriana specifica reprezinta 78% din constituentii biofilmului",
+      "E": "Nu depinde de varsta pacientului"
     },
     "correct": "C"
   },
   {
     "id": 62,
-    "question": "Pentru a acea rol cariiogen microorg al placii bateriene trebuie sa aiba urm",
+    "question": "Pentru a acea rol cariiogen microorg al placii bateriene trebuie sa aiba urm caracteristici:",
     "options": {
-      "A": "caracteristici:",
-      "B": "Agentul cauzal sa fie prezent pe suprafetele dintilor care nu prezinta leziuni",
-      "C": "carioase",
-      "D": "Sa determine aparitia unei cantitati mai mici de acizi in cavitatea bucala",
-      "E": "Este incapabil sa produca singur leziunea carioasa"
+      "A": "Agentul cauzal sa fie prezent pe suprafetele dintilor care nu prezinta leziuni carioase",
+      "B": "Sa determine aparitia unei cantitati mai mici de acizi in cavitatea bucala",
+      "C": "Este incapabil sa produca singur leziunea carioasa",
+      "D": "Sa reziste mediului acid produs de leziunea carioasa",
+      "E": "Sa existe pe suprafetele dintilor la pacientiii indemni de carie"
     },
     "correct": "A"
   },
@@ -738,11 +747,12 @@ registerModule("cap1", "Capitol 1 — Odontoterapie", "Întrebări din capitolul
     "question": "Capacitatea patogena a biofilmului bacterian este consecinta:",
     "options": {
       "A": "Concentrarii unui numar mic de microorg",
-      "C": "Cresterii constante a pHului peste 5,5",
-      "D": "Continutul scazut de glucide",
-      "E": "Capacitatii unor microorg de a fermenta o cantitate mare de hidrati de carbon"
+      "B": "Cresterii constante a pHului peste 5,5",
+      "C": "Continutul scazut de glucide",
+      "D": "Capacitatii unor microorg de a fermenta o cantitate mare de hidrati de carbon",
+      "E": "Continutului scazut de proteine"
     },
-    "correct": "E"
+    "correct": "D"
   },
   {
     "id": 64,
@@ -751,7 +761,8 @@ registerModule("cap1", "Capitol 1 — Odontoterapie", "Întrebări din capitolul
       "A": "Concentratia scazuta de calciu si fosfati din saliva",
       "B": "Pastrarea unui grad de ionizare puternica a acizilor",
       "C": "Varsta biofilmului",
-      "E": "Clearanceul bucal al hidratilor de carbon"
+      "D": "Clearanceul bucal al hidratilor de carbon",
+      "E": "Productia de acizi organici"
     },
     "correct": "A"
   },
@@ -760,12 +771,12 @@ registerModule("cap1", "Capitol 1 — Odontoterapie", "Întrebări din capitolul
     "question": "Secventa atacului cariogen:",
     "options": {
       "A": "La ph neutru se produce demineralizarea",
-      "B": "Pentru ca procesul carios sa fie ireversibil, viteza transferului de ioni minerali de la",
-      "C": "smalt la biofilmul bacterian sa fie mai mica decat cea care produce remineralizarea",
-      "D": "La ph 5,5 apare procesul de dizolvare suoerficiala a cristalelor de hidroxiapatita",
-      "E": "Debutul cariei declanseaza in cursul unui singur atac"
+      "B": "Pentru ca procesul carios sa fie ireversibil, viteza transferului de ioni minerali de la smalt la biofilmul bacterian sa fie mai mica decat cea care produce remineralizarea",
+      "C": "La ph 5,5 apare procesul de dizolvare suoerficiala a cristalelor de hidroxiapatita",
+      "D": "Debutul cariei declanseaza in cursul unui singur atac",
+      "E": "Demineralizarea are loc in stratul profund al smaltului"
     },
-    "correct": "D"
+    "correct": "C"
   },
   {
     "id": 66,
@@ -1133,8 +1144,8 @@ registerModule("cap1", "Capitol 1 — Odontoterapie", "Întrebări din capitolul
       "A": "Camera pulpara este o zona radioopaca",
       "B": "Radiografia nu ofera informatii asupra grosimii smaltului",
       "C": "Dentina coronara are o nuanta alba, mai intensa decat cea a smaltului",
-      "D": "Smaltul coronar are ecea mai mica radioopacitate",
-      "E": "Camera pulpara are o tenta de cenusiu inchis DIAG LEZ NECARIOASE"
+      "D": "IAG LEZ NECARIOASE",
+      "E": "Camera pulpara are o tenta de cenusiu inchis"
     },
     "correct": "E"
   },
@@ -1758,7 +1769,7 @@ registerModule("cap1", "Capitol 1 — Odontoterapie", "Întrebări din capitolul
       "B": "Timp de priza scazut",
       "C": "Sigilare foarte buna a plagii dentinare",
       "D": "Solubilitate crescuta",
-      "E": "Trebuie aplicate in strat foarte subtire ENDODONTIE CAP 2"
+      "E": "NDODONTIE CAP 2"
     },
     "correct": "C"
   }
